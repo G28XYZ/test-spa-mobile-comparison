@@ -11,6 +11,7 @@ export const dataDevices = [
     gz: "60 Гц",
     diagonal: "6,1",
     wirelessСharging: true,
+    memory: "128 Гб",
   },
   {
     name: "Apple iPhone XR",
@@ -24,6 +25,7 @@ export const dataDevices = [
     gz: "60 Гц",
     diagonal: "6,1",
     wirelessСharging: true,
+    memory: "128 Гб",
   },
   {
     name: "Xiaomi Mi 11 Lite",
@@ -37,6 +39,7 @@ export const dataDevices = [
     gz: "90 Гц",
     diagonal: "6,55",
     wirelessСharging: false,
+    memory: "128 Гб",
   },
   {
     name: "Samsung Galaxy A72",
@@ -50,6 +53,7 @@ export const dataDevices = [
     gz: "90 Гц",
     diagonal: "6,7",
     wirelessСharging: true,
+    memory: "128 Гб",
   },
   {
     name: "Samsung Galaxy S21",
@@ -63,6 +67,7 @@ export const dataDevices = [
     gz: "120 Гц",
     diagonal: "6,2",
     wirelessСharging: true,
+    memory: "128 Гб",
   },
   {
     name: "Realme 8 pro",
@@ -76,5 +81,6 @@ export const dataDevices = [
     gz: "60 Гц",
     diagonal: "6,4",
     wirelessСharging: false,
+    memory: "128 Гб",
   },
 ];

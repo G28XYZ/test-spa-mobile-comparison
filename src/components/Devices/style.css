@@ -1,0 +1,8 @@
+.devices__count {
+  cursor: pointer;
+  width: max-content;
+}
+
+.devices__count_active {
+  color: blue;
+}
