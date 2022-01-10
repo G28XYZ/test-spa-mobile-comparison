@@ -1,0 +1,39 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 44px 0;
+}
+
+.header:before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: -50vw;
+  width: 1000%;
+  height: 1px;
+  background-color: #a6a5a9;
+}
+
+.header__catalog {
+  color: #0d5adc;
+  font-size: 18px;
+  line-height: calc(21 / 18);
+}
+
+.header__right-block {
+  display: flex;
+}
+
+.header__image {
+  width: 20px;
+}
+
+.header__comparison {
+  padding-right: 48px;
+  text-transform: uppercase;
+}
+
+.header__account {
+  padding-right: 19px;
+}
