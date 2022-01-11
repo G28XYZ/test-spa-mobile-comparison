@@ -1,10 +1,10 @@
-const initialState = { count: 3 };
+const initialState = { currentCount: 3 };
 
 const reducer = (state = initialState, action: any) => {
   switch (action.type) {
     case "ON_CHANGE_COUNT":
       console.log(action, state);
-      return { count: action.count };
+      return { currentCount: action.currentCount };
     default:
       return state;
   }
