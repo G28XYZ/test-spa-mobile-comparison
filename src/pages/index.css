@@ -15,6 +15,7 @@
 @import url(../blocks/devices/__header/devices__header.css);
 @import url(../blocks/devices/__items/devices__items.css);
 @import url(../blocks/devices/__different/devices__different.css);
+@import url(../blocks/devices/__phone-block/devices__phone-block.css);
 @import url(../blocks/devices/__phone-button/devices__phone-button.css);
 @import url(../blocks/devices/__phone-image/devices__phone-image.css);
 @import url(../blocks/devices/__phone-list/devices__phone-list.css);
@@ -25,3 +26,8 @@
 /* modal */
 @import url(../blocks/modal/modal.css);
 @import url(../blocks/modal/_open/modal_open.css);
+@import url(../blocks/modal/__search/modal__search.css);
+@import url(../blocks/modal/__item-image/modal__item-image.css);
+@import url(../blocks/modal/__phone-list/modal__phone-list.css);
+@import url(../blocks/modal/__item/modal__item.css);
+@import url(../blocks/modal/__item-switch/modal__item-switch.css);

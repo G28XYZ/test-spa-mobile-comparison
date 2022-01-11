@@ -1,3 +1,6 @@
 .devices__phone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   text-align: center;
 }

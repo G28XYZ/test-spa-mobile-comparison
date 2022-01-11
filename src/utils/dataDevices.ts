@@ -1,5 +1,6 @@
 export const dataDevices = [
   {
+    id: 0,
     name: "Apple iPhone 12",
     image: require("../images/apple_12.png"),
     year: "2020",
@@ -14,6 +15,7 @@ export const dataDevices = [
     memory: "128 Гб",
   },
   {
+    id: 1,
     name: "Apple iPhone XR",
     image: require("../images/apple_xr.png"),
     year: "2018",
@@ -28,6 +30,7 @@ export const dataDevices = [
     memory: "128 Гб",
   },
   {
+    id: 2,
     name: "Xiaomi Mi 11 Lite",
     image: require("../images/xiaomi.png"),
     year: "2021",
@@ -42,6 +45,7 @@ export const dataDevices = [
     memory: "128 Гб",
   },
   {
+    id: 3,
     name: "Samsung Galaxy A72",
     image: require("../images/a72.png"),
     year: "2020",
@@ -56,6 +60,7 @@ export const dataDevices = [
     memory: "128 Гб",
   },
   {
+    id: 4,
     name: "Samsung Galaxy S21",
     image: require("../images/s21.png"),
     year: "2021",
@@ -70,6 +75,7 @@ export const dataDevices = [
     memory: "128 Гб",
   },
   {
+    id: 5,
     name: "Realme 8 pro",
     image: require("../images/realme.png"),
     year: "2021",

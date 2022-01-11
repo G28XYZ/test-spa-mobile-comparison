@@ -1,19 +1,31 @@
 import { dataDevices } from "../utils/dataDevices";
 
+let mapShowPhones = dataDevices.slice(0, 3);
+let mapHiddenPhones = dataDevices.filter((item: any) => !(item.id in mapShowPhones));
+
 const initialState = {
   currentCount: 3,
-  phoneShow: new Array(),
+  phoneShow: mapShowPhones,
+  phoneHidden: mapHiddenPhones,
   modal: false,
 };
 
 const reducer = (state = initialState, action: any) => {
-  let mapPhones;
   switch (action.type) {
+    //
     case "ON_CHANGE_COUNT":
-      mapPhones = dataDevices.slice(0, action.currentCount).map((phone) => phone);
-      return { ...state, currentCount: action.currentCount, phoneShow: mapPhones };
+      mapShowPhones = dataDevices.slice(0, action.currentCount);
+      mapHiddenPhones = dataDevices.filter((item: any) => !(item.id in mapShowPhones));
+      return {
+        ...state,
+        currentCount: action.currentCount,
+        phoneShow: mapShowPhones,
+        phoneHidden: mapHiddenPhones,
+      };
+
     case "OPEN_MODAL":
       return { ...state, modal: !state.modal };
+
     default:
       return state;
   }

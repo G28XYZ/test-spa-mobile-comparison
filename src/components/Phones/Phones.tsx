@@ -6,14 +6,17 @@ import { setCountItem, openModal } from "../../redux/actions";
 const phoneItem = (phone: any, index: number, currentCount: number, openModal: any) => {
   return (
     <li key={index + 1} className="devices__phone">
-      <img src={phone.image} alt={phone.name} className="devices__phone-image" />
-      {currentCount < 6 ? (
-        <button className="devices__phone-button" onClick={openModal}></button>
-      ) : null}
+      <div className="device__phone-block">
+        <img src={phone.image} alt={phone.name} className="devices__phone-image" />
+        {currentCount < 6 ? (
+          <button className="devices__phone-button" onClick={openModal}></button>
+        ) : null}
+      </div>
       <p className="devices__phone-title">{phone.name}</p>
     </li>
   );
 };
+
 class Phones extends React.Component<any> {
   constructor(props: any) {
     super(props);

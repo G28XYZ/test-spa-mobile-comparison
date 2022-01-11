@@ -1,0 +1,16 @@
+.modal__item-switch {
+  background: none;
+  border: none;
+  background-image: url(../../../images/arrows.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.modal__item-switch:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s;
+}

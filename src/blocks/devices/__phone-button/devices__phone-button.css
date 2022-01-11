@@ -7,4 +7,12 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  margin-left: 25px;
+  padding-bottom: 30px;
+  align-self: flex-end;
+}
+
+.devices__phone-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s;
 }
