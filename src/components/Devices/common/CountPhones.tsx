@@ -10,14 +10,18 @@ const CountPhones = ({ currentCount, setCount }: any) => {
     return (
       <div
         key={num}
-        className={num == currentCount ? `${clazz} ${clazz}_active` : `${clazz}`}
+        className={
+          num == currentCount ? `${clazz} ${clazz}_active` : `${clazz}`
+        }
         onClick={() => setCount(num)}
       >
         {num}
       </div>
     );
   });
-  return <div className="devices__count-list">Отобразить товары: {mapCount}</div>;
+  return (
+    <div className="devices__count-list">Отобразить товары: {mapCount}</div>
+  );
 };
 
 const mapStateToProps = (state: any) => {
@@ -30,4 +34,6 @@ const mapDispatchToProps = {
   setCount,
 };
 
-export default compose(connect(mapStateToProps, mapDispatchToProps))(CountPhones);
+export default compose(connect(mapStateToProps, mapDispatchToProps))(
+  CountPhones
+);

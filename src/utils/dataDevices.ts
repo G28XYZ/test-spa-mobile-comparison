@@ -29,7 +29,7 @@ export const dataDevices = [
   },
   {
     name: "Xiaomi Mi 11 Lite",
-    image: require("../images/apple12.svg"),
+    image: require("../images/Xiaomi.svg"),
     year: "2021",
     made: "Китай",
     brand: "Xiaomi",
