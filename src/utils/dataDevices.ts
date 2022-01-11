@@ -1,7 +1,7 @@
 export const dataDevices = [
   {
     name: "Apple iPhone 12",
-    image: require("../images/apple12.svg"),
+    image: require("../images/apple_12.png"),
     year: "2020",
     made: "Китай",
     brand: "Apple",
@@ -15,7 +15,7 @@ export const dataDevices = [
   },
   {
     name: "Apple iPhone XR",
-    image: require("../images/appleXR.svg"),
+    image: require("../images/apple_xr.png"),
     year: "2018",
     made: "Китай",
     brand: "Apple",
@@ -29,7 +29,7 @@ export const dataDevices = [
   },
   {
     name: "Xiaomi Mi 11 Lite",
-    image: require("../images/Xiaomi.svg"),
+    image: require("../images/xiaomi.png"),
     year: "2021",
     made: "Китай",
     brand: "Xiaomi",
@@ -43,7 +43,7 @@ export const dataDevices = [
   },
   {
     name: "Samsung Galaxy A72",
-    image: require("../images/A72.svg"),
+    image: require("../images/a72.png"),
     year: "2020",
     made: "Вьетнам",
     brand: "Samsung",
@@ -57,7 +57,7 @@ export const dataDevices = [
   },
   {
     name: "Samsung Galaxy S21",
-    image: require("../images/s21.svg"),
+    image: require("../images/s21.png"),
     year: "2021",
     made: "Китай",
     brand: "Samsung",
@@ -71,7 +71,7 @@ export const dataDevices = [
   },
   {
     name: "Realme 8 pro",
-    image: require("../images/realme.svg"),
+    image: require("../images/realme.png"),
     year: "2021",
     made: "Китай",
     brand: "Realme",

@@ -1,6 +1,10 @@
-const setCount = (num: number) => ({
+const setCountItem = (num: number) => ({
   type: "ON_CHANGE_COUNT",
   currentCount: num,
 });
 
-export { setCount };
+const openModal = () => ({
+  type: "OPEN_MODAL",
+});
+
+export { setCountItem, openModal };

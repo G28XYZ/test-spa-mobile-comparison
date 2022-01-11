@@ -9,9 +9,7 @@ const Devices = () => {
         <h1 className="devices__title">Смартфоны</h1>
         <CountPhones />
       </div>
-      <div>
-        <Phones />
-      </div>
+      <Phones />
     </section>
   );
 };

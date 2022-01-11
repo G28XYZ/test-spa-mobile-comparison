@@ -1,6 +1,7 @@
 import * as React from "react";
 import Header from "../Header/Header";
 import Devices from "../Devices/Devices";
+import Modal from "../Modal/Modal";
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <main className="content">
         <Devices />
       </main>
+      <Modal />
     </div>
   );
 };

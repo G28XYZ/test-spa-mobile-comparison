@@ -1,27 +1,23 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { setCount } from "../../redux/actions";
+import { setCountItem } from "../../redux/actions";
 
-const CountPhones = ({ currentCount, setCount }: any) => {
+const CountPhones = ({ currentCount, setCountItem }: any) => {
   const maxCount = [2, 3, 4, 5, 6];
   const clazz = "devices__count";
   const mapCount = maxCount.map((num) => {
     return (
-      <div
+      <li
         key={num}
-        className={
-          num == currentCount ? `${clazz} ${clazz}_active` : `${clazz}`
-        }
-        onClick={() => setCount(num)}
+        className={num == currentCount ? `${clazz} ${clazz}_active` : `${clazz}`}
+        onClick={() => setCountItem(num)}
       >
         {num}
-      </div>
+      </li>
     );
   });
-  return (
-    <div className="devices__count-list">Отобразить товары: {mapCount}</div>
-  );
+  return <ul className="devices__count-list">Отобразить товары: {mapCount}</ul>;
 };
 
 const mapStateToProps = (state: any) => {
@@ -31,9 +27,7 @@ const mapStateToProps = (state: any) => {
 };
 
 const mapDispatchToProps = {
-  setCount,
+  setCountItem,
 };
 
-export default compose(connect(mapStateToProps, mapDispatchToProps))(
-  CountPhones
-);
+export default compose(connect(mapStateToProps, mapDispatchToProps))(CountPhones);
