@@ -3,8 +3,14 @@ const setCountItem = (num: number) => ({
   currentCount: num,
 });
 
-const openModal = () => ({
+const openModal = (id = 0) => ({
   type: "OPEN_MODAL",
+  id,
 });
 
-export { setCountItem, openModal };
+const switchPhone = (id: any) => ({
+  type: "SWITCH_PHONE",
+  id,
+});
+
+export { setCountItem, openModal, switchPhone };

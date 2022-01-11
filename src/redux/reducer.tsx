@@ -8,6 +8,7 @@ const initialState = {
   phoneShow: mapShowPhones,
   phoneHidden: mapHiddenPhones,
   modal: false,
+  onOpenId: 0,
 };
 
 const reducer = (state = initialState, action: any) => {
@@ -24,7 +25,27 @@ const reducer = (state = initialState, action: any) => {
       };
 
     case "OPEN_MODAL":
-      return { ...state, modal: !state.modal };
+      return { ...state, modal: !state.modal, onOpenId: action.id };
+
+    case "SWITCH_PHONE":
+      const findIndexInShow: number = state.phoneShow.findIndex(
+        (item: any) => state.onOpenId == item.id
+      );
+      const findIndexInHidden: number = state.phoneHidden.findIndex(
+        (item: any) => action.id == item.id
+      );
+      const inShowObj = mapShowPhones[findIndexInShow];
+      const inHiddenObj = mapHiddenPhones[findIndexInHidden];
+
+      mapShowPhones[findIndexInShow] = inHiddenObj;
+      mapHiddenPhones[findIndexInHidden] = inShowObj;
+      console.log(mapShowPhones, mapHiddenPhones);
+      return {
+        ...state,
+        phoneShow: mapShowPhones,
+        phoneHidden: mapHiddenPhones,
+        modal: !state.modal,
+      };
 
     default:
       return state;

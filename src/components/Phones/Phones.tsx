@@ -3,14 +3,18 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import { setCountItem, openModal } from "../../redux/actions";
 
-const phoneItem = (phone: any, index: number, currentCount: number, openModal: any) => {
+const phoneItem = (phone: any, currentCount: number, openModal: any) => {
+  //
+  let btn = <button className="devices__phone-button" onClick={() => openModal(phone.id)}></button>;
+  if (currentCount == 6) {
+    btn = null;
+  }
+  //
   return (
-    <li key={index + 1} className="devices__phone">
+    <li key={phone.id + 1} className="devices__phone">
       <div className="device__phone-block">
         <img src={phone.image} alt={phone.name} className="devices__phone-image" />
-        {currentCount < 6 ? (
-          <button className="devices__phone-button" onClick={openModal}></button>
-        ) : null}
+        {btn}
       </div>
       <p className="devices__phone-title">{phone.name}</p>
     </li>
@@ -29,8 +33,8 @@ class Phones extends React.Component<any> {
   render(): React.ReactNode {
     const { phoneShow, currentCount, openModal } = this.props;
     console.log("phones");
-    const mapPhones = phoneShow.map((phone: any, index: number) => {
-      return phoneItem(phone, index, currentCount, openModal);
+    const mapPhones = phoneShow.map((phone: any) => {
+      return phoneItem(phone, currentCount, openModal);
     });
     return (
       <div className="devices__items">
