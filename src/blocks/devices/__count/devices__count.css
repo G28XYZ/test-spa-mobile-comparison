@@ -1,0 +1,10 @@
+.devices__count {
+  cursor: pointer;
+  width: max-content;
+  height: max-content;
+  padding: 0 3px;
+}
+
+.devices__count_active {
+  border-bottom: solid 1px;
+}

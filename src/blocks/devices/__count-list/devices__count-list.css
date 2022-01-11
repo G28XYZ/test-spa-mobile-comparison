@@ -1,0 +1,6 @@
+.devices__count-list {
+  display: flex;
+  color: #0d5adc;
+  font-size: 18px;
+  line-height: calc(24 / 18);
+}

@@ -1,0 +1,4 @@
+.devices__phone-list {
+  list-style-type: none;
+  display: flex;
+}

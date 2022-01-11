@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { setCount } from "../../../redux/actions";
+import { setCount } from "../../redux/actions";
 
 const CountPhones = ({ currentCount, setCount }: any) => {
   const maxCount = [2, 3, 4, 5, 6];

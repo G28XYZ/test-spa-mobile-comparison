@@ -1,7 +1,6 @@
 import * as React from "react";
-import CountPhones from "./common/CountPhones";
-import Phones from "./common/Phones";
-import "./style.css";
+import CountPhones from "../CountPhones/CountPhones";
+import Phones from "../Phones/Phones";
 
 const Devices = () => {
   return (

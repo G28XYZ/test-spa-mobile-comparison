@@ -1,5 +1,19 @@
-.page {
-  font-family: Roboto;
-  max-width: 1110px;
-  margin: 0 auto;
-}
+@import url(../blocks/page/page.css);
+
+/* header */
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__account/header__account.css);
+@import url(../blocks/header/__catalog/header__catalog.css);
+@import url(../blocks/header/__comparison/header__comparison.css);
+@import url(../blocks/header/__image/header__image.css);
+@import url(../blocks/header/__right-block/header__right-block.css);
+
+/* devices */
+@import url(../blocks/devices/devices.css);
+@import url(../blocks/devices/__count-list/devices__count-list.css);
+@import url(../blocks/devices/__count/devices__count.css);
+@import url(../blocks/devices/__header/devices__header.css);
+@import url(../blocks/devices/__phone-button/devices__phone-button.css);
+@import url(../blocks/devices/__phone-image/devices__phone-image.css);
+@import url(../blocks/devices/__phone-list/devices__phone-list.css);
+@import url(../blocks/devices/__title/devices__title.css);
