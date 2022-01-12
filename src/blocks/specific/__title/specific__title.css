@@ -1,0 +1,7 @@
+.specific__title {
+  margin: 0;
+  text-transform: uppercase;
+  color: #a4a9b9;
+  grid-column: span 1;
+  width: 100%;
+}

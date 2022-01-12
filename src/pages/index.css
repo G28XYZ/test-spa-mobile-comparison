@@ -1,3 +1,4 @@
+@import url(../vendor/fonts.css);
 @import url(../blocks/page/page.css);
 
 /* header */
@@ -15,6 +16,7 @@
 @import url(../blocks/devices/__header/devices__header.css);
 @import url(../blocks/devices/__items/devices__items.css);
 @import url(../blocks/devices/__different/devices__different.css);
+@import url(../blocks/devices/__checkbox/devices__checkbox.css);
 @import url(../blocks/devices/__phone-block/devices__phone-block.css);
 @import url(../blocks/devices/__phone-button/devices__phone-button.css);
 @import url(../blocks/devices/__phone-image/devices__phone-image.css);
@@ -37,3 +39,7 @@
 /* specific */
 @import url(../blocks/specific/specific.css);
 @import url(../blocks/specific/__row/specific__row.css);
+@import url(../blocks/specific/__list/specific__list.css);
+@import url(../blocks/specific/__content/specific__content.css);
+@import url(../blocks/specific/__content-image/specific__content-image.css);
+@import url(../blocks/specific/__title/specific__title.css);

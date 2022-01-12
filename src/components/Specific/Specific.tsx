@@ -2,17 +2,16 @@ import * as React from "react";
 import { connect } from "react-redux";
 
 const nameSpecific = [
-  { name: "Наименование", key: "name" },
-  { name: "Год", key: "year" },
-  { name: "Страна производитель", key: "made" },
   { name: "Производитель", key: "brand" },
-  { name: "NFC", key: "nfc" },
-  { name: "eSim", key: "eSim" },
-  { name: "Цена", key: "price" },
-  { name: "Частоат экрана", key: "gz" },
-  { name: "Диагональ", key: "diagonal" },
-  { name: "Беспроводная зарядка", key: "wirelessСharging" },
+  { name: "Год", key: "year" },
+  { name: "Диагональ экрана (дюйм)", key: "diagonal" },
+  { name: "Страна-производитель", key: "made" },
   { name: "Объём памяти", key: "memory" },
+  { name: "Частота обновления экрана", key: "gz" },
+  { name: "Поддержка беспроводной зарядки зарядка", key: "wirelessСharging" },
+  { name: "Поддержка eSim", key: "eSim" },
+  { name: "NFC", key: "nfc" },
+  { name: "Цена", key: "price" },
 ];
 
 const Specific = ({ phoneShow }: any) => {
@@ -20,18 +19,23 @@ const Specific = ({ phoneShow }: any) => {
 
   const mapSpecific = nameSpecific.map((e: any, index: any) => {
     const mapContent = phoneShow.map((item: any) => {
-      return <p>{item[e.key]}</p>;
+      let tag = <p className="specific__content">{item[e.key]}</p>;
+      if (typeof item[e.key] == "boolean") {
+        const src = require(`../../images/icon-${item[e.key]}.png`);
+        tag = <img src={src} className="specific__content-image" />;
+      }
+      return tag;
     });
     return (
       <li key={index + 1} className="specific__row">
-        {e.name}: {mapContent}
+        <p className="specific__title">{e.name}:</p> {mapContent}
       </li>
     );
   });
 
   return (
     <section className="specific">
-      <ul>{mapSpecific}</ul>
+      <ul className="specific__list">{mapSpecific}</ul>
     </section>
   );
 };

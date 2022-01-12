@@ -1,30 +1,34 @@
 import { dataDevices } from "../utils/dataDevices";
 
-let mapShowPhones = dataDevices.slice(0, 3);
-let mapHiddenPhones = dataDevices.filter(
-  (item: any) => !(item.id in mapShowPhones)
-);
+const initialPhoneShow = dataDevices.slice(0, 3);
+const initialPhoneHidden = dataDevices.filter((item: any) => !initialPhoneShow.includes(item));
 
 const initialState = {
   maxDevices: dataDevices.length,
   currentCount: 3,
-  phoneShow: mapShowPhones,
-  phoneHidden: mapHiddenPhones,
+  phoneShow: initialPhoneShow,
+  phoneHidden: initialPhoneHidden,
   modal: false,
   onOpenId: 0,
   positionModal: 0,
+  filterText: "",
 };
+
+function mappingPhones(state: any, currentCount: number) {
+  const allDevices = [
+    ...state.phoneShow,
+    ...dataDevices.filter((item) => !state.phoneShow.includes(item)),
+  ];
+  const mapShowPhones = allDevices.slice(0, currentCount);
+  const mapHiddenPhones = allDevices.slice(mapShowPhones.length);
+  return [mapShowPhones, mapHiddenPhones];
+}
 
 const reducer = (state = initialState, action: any) => {
   switch (action.type) {
     //
     case "ON_CHANGE_COUNT":
-      const allDevices = [
-        ...state.phoneShow,
-        ...dataDevices.filter((item) => !state.phoneShow.includes(item)),
-      ];
-      mapShowPhones = allDevices.slice(0, action.currentCount);
-      mapHiddenPhones = allDevices.slice(mapShowPhones.length);
+      const [mapShowPhones, mapHiddenPhones] = mappingPhones(state, action.currentCount);
       return {
         ...state,
         currentCount: action.currentCount,
@@ -40,15 +44,11 @@ const reducer = (state = initialState, action: any) => {
 
     case "ON_FILTER":
       const filterText = action.filterText.toLowerCase();
-      const phoneHidden = dataDevices.filter(
-        (item) => !state.phoneShow.includes(item)
-      );
+      const phoneHidden = dataDevices.filter((item) => !state.phoneShow.includes(item));
       const filterPhone = dataDevices.filter(
-        (item: any) =>
-          phoneHidden.includes(item) &&
-          item.name.toLowerCase().includes(filterText)
+        (item: any) => phoneHidden.includes(item) && item.name.toLowerCase().includes(filterText)
       );
-      return { ...state, phoneHidden: filterPhone };
+      return { ...state, phoneHidden: filterPhone, filterText };
 
     case "SWITCH_PHONE":
       const findIndexInShow: number = state.phoneShow.findIndex(
@@ -59,15 +59,16 @@ const reducer = (state = initialState, action: any) => {
       );
       const inShowObj = state.phoneShow[findIndexInShow];
       const inHiddenObj = state.phoneHidden[findIndexInHidden];
-
-      mapShowPhones[findIndexInShow] = inHiddenObj;
-      mapHiddenPhones[findIndexInHidden] = inShowObj;
+      const [showPhones, hiddenPhones] = mappingPhones(state, state.currentCount);
+      showPhones[findIndexInShow] = inHiddenObj;
+      hiddenPhones[findIndexInHidden] = inShowObj;
       return {
         ...state,
-        phoneShow: mapShowPhones,
-        phoneHidden: mapHiddenPhones,
+        phoneShow: showPhones,
+        phoneHidden: hiddenPhones,
         modal: !state.modal,
         onOpenId: action.id,
+        filterText: "",
       };
 
     default:

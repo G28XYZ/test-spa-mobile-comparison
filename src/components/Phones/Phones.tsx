@@ -17,8 +17,7 @@ const phoneItem = (
     const innerWidth = evt.view.innerWidth;
     const pageX = evt.pageX;
     const correctOnPage = innerWidth > 1100 ? innerWidth / 2 - widthModal : 0;
-    const correctBefore =
-      widthModal + pageX < innerWidth ? 0 : widthModal + pageX - innerWidth;
+    const correctBefore = widthModal + pageX < innerWidth ? 0 : widthModal + pageX - innerWidth;
 
     return pageX - correctBefore - correctOnPage;
   };
@@ -39,11 +38,7 @@ const phoneItem = (
   return (
     <li key={phone.id + 1} className="devices__phone">
       <div className="device__phone-block">
-        <img
-          src={phone.image}
-          alt={phone.name}
-          className="devices__phone-image"
-        />
+        <img src={phone.image} alt={phone.name} className="devices__phone-image" />
         {btn}
       </div>
       <p className="devices__phone-title">{phone.name}</p>
@@ -63,8 +58,7 @@ class Phones extends React.Component<any> {
   }
 
   render(): React.ReactNode {
-    const { phoneShow, currentCount, openModal, maxDevices, setPosition } =
-      this.props;
+    const { phoneShow, currentCount, openModal, maxDevices, setPosition } = this.props;
     const mapPhones = phoneShow.map((phone: any) => {
       return phoneItem(phone, currentCount, openModal, maxDevices, setPosition);
     });
@@ -74,8 +68,8 @@ class Phones extends React.Component<any> {
     return (
       <div className="devices__items">
         <div className="devices__different">
-          <input type="checkbox" />
-          Показать различия
+          <input type="checkbox" className="devices__checkbox" />
+          <span>Показать различия</span>
         </div>
         <ul className="devices__phone-list">{mapPhones}</ul>
       </div>

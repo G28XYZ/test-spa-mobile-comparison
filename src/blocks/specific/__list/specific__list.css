@@ -1,0 +1,7 @@
+.specific__list {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  margin: 0;
+  padding: 0;
+}

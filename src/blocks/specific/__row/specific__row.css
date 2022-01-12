@@ -1,5 +1,16 @@
 .specific__row {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   justify-content: space-between;
-  align-self: flex-start;
+  padding: 45px 0;
+  background-color: #f1f7fc;
+}
+
+.specific__row:before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: #cdcfd2;
 }

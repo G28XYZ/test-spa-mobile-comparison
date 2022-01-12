@@ -1,11 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import {
-  openModal,
-  switchPhone,
-  setCountItem,
-  onFilterPhone,
-} from "../../redux/actions";
+import { openModal, switchPhone, setCountItem, onFilterPhone } from "../../redux/actions";
 
 //
 class Modal extends React.Component<any> {
@@ -35,6 +30,7 @@ class Modal extends React.Component<any> {
   };
 
   render() {
+    //
     const {
       modal,
       phoneHidden,
@@ -45,7 +41,9 @@ class Modal extends React.Component<any> {
       maxDevices,
       positionModal,
       onFilterPhone,
+      filterText,
     } = this.props;
+    //
     if (modal) {
       document.addEventListener("keydown", this._handleCloseByEsc);
       document.addEventListener("click", this._handleCloseByOverlay);
@@ -59,17 +57,12 @@ class Modal extends React.Component<any> {
     return (
       <div
         style={styles[".modal"]}
-        className={
-          modal && currentCount < maxDevices ? "modal modal_open" : "modal"
-        }
+        className={modal && currentCount < maxDevices ? "modal modal_open" : "modal"}
       >
         <input
           type="text"
-          className={
-            currentCount <= 3
-              ? "modal__search modal__search_active"
-              : "modal__search"
-          }
+          value={filterText}
+          className={currentCount <= 3 ? "modal__search modal__search_active" : "modal__search"}
           placeholder="Поиск"
           onChange={(evt: any) => onFilterPhone(evt.target.value)}
         />
@@ -84,11 +77,7 @@ class Modal extends React.Component<any> {
                   openModal(phone.id);
                 }}
               ></button>
-              <img
-                className="modal__item-image"
-                src={phone.image}
-                alt={phone.name}
-              />
+              <img className="modal__item-image" src={phone.image} alt={phone.name} />
               <p className="modal__item-title">{phone.name}</p>
             </li>
           ))}
@@ -105,6 +94,7 @@ const mapStateToProps = (state: any) => {
     currentCount: state.currentCount,
     maxDevices: state.maxDevices,
     positionModal: state.positionModal,
+    filterText: state.filterText,
   };
 };
 
