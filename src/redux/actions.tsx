@@ -8,9 +8,14 @@ const openModal = (id: number) => ({
   id,
 });
 
-const switchPhone = (id: any) => ({
+const switchPhone = (id: number) => ({
   type: "SWITCH_PHONE",
   id,
 });
 
-export { setCountItem, openModal, switchPhone };
+const setPosition = (position: number) => ({
+  type: "SET_POSITION_MODAL",
+  position,
+});
+
+export { setCountItem, openModal, switchPhone, setPosition };

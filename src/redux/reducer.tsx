@@ -1,14 +1,18 @@
 import { dataDevices } from "../utils/dataDevices";
 
 let mapShowPhones = dataDevices.slice(0, 3);
-let mapHiddenPhones = dataDevices.filter((item: any) => !(item.id in mapShowPhones));
+let mapHiddenPhones = dataDevices.filter(
+  (item: any) => !(item.id in mapShowPhones)
+);
 
 const initialState = {
+  maxDevices: dataDevices.length,
   currentCount: 3,
   phoneShow: mapShowPhones,
   phoneHidden: mapHiddenPhones,
   modal: false,
-  onOpenId: "",
+  onOpenId: 0,
+  positionModal: 0,
 };
 
 const reducer = (state = initialState, action: any) => {
@@ -26,8 +30,10 @@ const reducer = (state = initialState, action: any) => {
       };
 
     case "OPEN_MODAL":
-      console.log(action);
       return { ...state, modal: !state.modal, onOpenId: action.id };
+
+    case "SET_POSITION_MODAL":
+      return { ...state, positionModal: action.position };
 
     case "SWITCH_PHONE":
       const findIndexInShow: number = state.phoneShow.findIndex(
@@ -41,12 +47,12 @@ const reducer = (state = initialState, action: any) => {
 
       mapShowPhones[findIndexInShow] = inHiddenObj;
       mapHiddenPhones[findIndexInHidden] = inShowObj;
-      console.log(mapShowPhones, mapHiddenPhones);
       return {
         ...state,
         phoneShow: mapShowPhones,
         phoneHidden: mapHiddenPhones,
         modal: !state.modal,
+        onOpenId: action.id,
       };
 
     default:
