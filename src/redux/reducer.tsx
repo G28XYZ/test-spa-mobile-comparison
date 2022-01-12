@@ -8,15 +8,16 @@ const initialState = {
   phoneShow: mapShowPhones,
   phoneHidden: mapHiddenPhones,
   modal: false,
-  onOpenId: 0,
+  onOpenId: "",
 };
 
 const reducer = (state = initialState, action: any) => {
   switch (action.type) {
     //
     case "ON_CHANGE_COUNT":
-      mapShowPhones = dataDevices.slice(0, action.currentCount);
-      mapHiddenPhones = dataDevices.filter((item: any) => !(item.id in mapShowPhones));
+      const allDevices = [...state.phoneShow, ...state.phoneHidden];
+      mapShowPhones = allDevices.slice(0, action.currentCount);
+      mapHiddenPhones = allDevices.slice(mapShowPhones.length);
       return {
         ...state,
         currentCount: action.currentCount,
@@ -25,6 +26,7 @@ const reducer = (state = initialState, action: any) => {
       };
 
     case "OPEN_MODAL":
+      console.log(action);
       return { ...state, modal: !state.modal, onOpenId: action.id };
 
     case "SWITCH_PHONE":
@@ -34,8 +36,8 @@ const reducer = (state = initialState, action: any) => {
       const findIndexInHidden: number = state.phoneHidden.findIndex(
         (item: any) => action.id == item.id
       );
-      const inShowObj = mapShowPhones[findIndexInShow];
-      const inHiddenObj = mapHiddenPhones[findIndexInHidden];
+      const inShowObj = state.phoneShow[findIndexInShow];
+      const inHiddenObj = state.phoneHidden[findIndexInHidden];
 
       mapShowPhones[findIndexInShow] = inHiddenObj;
       mapHiddenPhones[findIndexInHidden] = inShowObj;

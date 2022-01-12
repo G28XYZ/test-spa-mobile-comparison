@@ -3,7 +3,7 @@ const setCountItem = (num: number) => ({
   currentCount: num,
 });
 
-const openModal = (id = 0) => ({
+const openModal = (id: number) => ({
   type: "OPEN_MODAL",
   id,
 });
