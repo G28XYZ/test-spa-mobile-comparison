@@ -5,3 +5,9 @@
   padding-top: 8px;
   width: 100%;
 }
+
+@media screen and (max-width: 640px) {
+  .devices__phone-title {
+    font-size: 12px;
+  }
+}

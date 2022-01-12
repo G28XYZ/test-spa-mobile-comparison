@@ -6,7 +6,7 @@ export const dataDevices = [
     year: "2020",
     made: "Китай",
     brand: "Apple",
-    nfc: true,
+    nfc: false,
     eSim: true,
     price: "81 990 ₽",
     gz: "60 Гц",

@@ -62,7 +62,11 @@ class Modal extends React.Component<any> {
         <input
           type="text"
           value={filterText}
-          className={currentCount <= 3 ? "modal__search modal__search_active" : "modal__search"}
+          className={
+            phoneHidden.length >= 3 || filterText
+              ? "modal__search modal__search_active"
+              : "modal__search"
+          }
           placeholder="Поиск"
           onChange={(evt: any) => onFilterPhone(evt.target.value)}
         />

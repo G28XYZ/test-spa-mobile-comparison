@@ -1,6 +1,8 @@
 .modal {
   position: absolute;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
   top: 350px;
   right: 150px;
   width: 421px;
@@ -12,4 +14,10 @@
   border-radius: 4px;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+@media screen and (max-width: 640px) {
+  .modal {
+    width: 320px;
+  }
 }

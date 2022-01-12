@@ -3,3 +3,10 @@
   justify-content: space-between;
   padding: 40px 0 78px 0;
 }
+
+@media screen and (max-width: 768px) {
+  .devices__items {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

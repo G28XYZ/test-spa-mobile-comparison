@@ -23,4 +23,8 @@ const onFilterPhone = (text: string) => ({
   filterText: text,
 });
 
-export { setCountItem, openModal, switchPhone, setPosition, onFilterPhone };
+const onChecked = () => ({
+  type: "ON_CHECKED",
+});
+
+export { setCountItem, openModal, switchPhone, setPosition, onFilterPhone, onChecked };

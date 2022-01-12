@@ -5,3 +5,9 @@
   grid-column: span 1;
   width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  .specific__title {
+    padding-bottom: 15px;
+  }
+}

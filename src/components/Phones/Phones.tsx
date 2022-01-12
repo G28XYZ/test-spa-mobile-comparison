@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { setCountItem, openModal, setPosition } from "../../redux/actions";
+import { setCountItem, openModal, setPosition, onChecked } from "../../redux/actions";
 
 const phoneItem = (
   phone: any,
@@ -18,7 +18,9 @@ const phoneItem = (
     const pageX = evt.pageX;
     const correctOnPage = innerWidth > 1100 ? innerWidth / 2 - widthModal : 0;
     const correctBefore = widthModal + pageX < innerWidth ? 0 : widthModal + pageX - innerWidth;
-
+    if (innerWidth <= 640) {
+      return 0;
+    }
     return pageX - correctBefore - correctOnPage;
   };
 
@@ -58,7 +60,7 @@ class Phones extends React.Component<any> {
   }
 
   render(): React.ReactNode {
-    const { phoneShow, currentCount, openModal, maxDevices, setPosition } = this.props;
+    const { phoneShow, currentCount, openModal, maxDevices, setPosition, onChecked } = this.props;
     const mapPhones = phoneShow.map((phone: any) => {
       return phoneItem(phone, currentCount, openModal, maxDevices, setPosition);
     });
@@ -68,7 +70,7 @@ class Phones extends React.Component<any> {
     return (
       <div className="devices__items">
         <div className="devices__different">
-          <input type="checkbox" className="devices__checkbox" />
+          <input type="checkbox" className="devices__checkbox" onChange={onChecked} />
           <span>Показать различия</span>
         </div>
         <ul className="devices__phone-list">{mapPhones}</ul>
@@ -89,6 +91,7 @@ const mapDispatchToProps = {
   setCountItem,
   openModal,
   setPosition,
+  onChecked,
 };
 
 export default compose(connect(mapStateToProps, mapDispatchToProps))(Phones);

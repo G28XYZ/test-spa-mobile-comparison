@@ -2,3 +2,9 @@
   display: flex;
   justify-items: center;
 }
+
+@media screen and (max-width: 640px) {
+  .device__phone-block {
+    flex-direction: column;
+  }
+}

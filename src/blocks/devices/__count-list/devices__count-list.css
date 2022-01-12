@@ -6,4 +6,17 @@
   color: #0d5adc;
   font-size: 18px;
   line-height: calc(24 / 18);
+  font-weight: 400;
+  padding: 0;
+}
+
+.devices__count-list > span {
+  padding-right: 8px;
+}
+
+@media screen and (max-width: 640px) {
+  .devices__count-list {
+    align-self: center;
+    padding: 20px 0;
+  }
 }

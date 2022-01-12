@@ -4,3 +4,10 @@
   margin: 0;
   padding-left: 20px;
 }
+
+@media screen and (max-width: 640px) {
+  .specific__content {
+    padding: 0 5px;
+    font-size: 14px;
+  }
+}

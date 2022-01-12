@@ -1,4 +1,23 @@
 .specific {
+  position: relative;
   display: flex;
   flex-direction: column;
+}
+
+.specific:before {
+  content: "";
+  position: absolute;
+  background-color: #f1f7fc;
+  right: calc(-100% - (100vw - 102%));
+  left: 0;
+  transform: translate(-50%, 0);
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .specific::before {
+    right: 0px;
+    left: 0;
+    transform: translate(0, 0);
+  }
 }

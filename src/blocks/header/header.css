@@ -3,13 +3,28 @@
   display: flex;
   justify-content: space-between;
   padding: 44px 0;
+  font-weight: bolder;
 }
 
 .header:before {
   position: absolute;
   content: "";
   bottom: 0;
-  width: 100%;
+  right: calc(-100% - (100vw - 102%));
+  left: 0;
+  transform: translate(-50%, 0);
   height: 1px;
   background-color: #a6a5a9;
+}
+
+@media screen and (max-width: 640px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .header:before {
+    right: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
 }

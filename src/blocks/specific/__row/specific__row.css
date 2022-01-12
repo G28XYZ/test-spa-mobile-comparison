@@ -4,7 +4,6 @@
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   justify-content: space-between;
   padding: 45px 0;
-  background-color: #f1f7fc;
 }
 
 .specific__row:before {
@@ -13,4 +12,22 @@
   height: 1px;
   width: 100%;
   background-color: #cdcfd2;
+}
+
+@media screen and (max-width: 768px) {
+  .specific__row {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  .specific__row:before {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 100%;
+    top: 0;
+    background-color: #cdcfd2;
+  }
 }

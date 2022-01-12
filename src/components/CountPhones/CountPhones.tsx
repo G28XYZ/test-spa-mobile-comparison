@@ -10,16 +10,19 @@ const CountPhones = ({ currentCount, setCountItem, maxDevices }: any) => {
     return (
       <li
         key={num}
-        className={
-          num == currentCount ? `${clazz} ${clazz}_active` : `${clazz}`
-        }
+        className={num == currentCount ? `${clazz} ${clazz}_active` : `${clazz}`}
         onClick={() => setCountItem(num)}
       >
         {num}
       </li>
     );
   });
-  return <ul className="devices__count-list">Отобразить товары: {mapCount}</ul>;
+  return (
+    <ul className="devices__count-list">
+      <span>Отобразить товары:</span>
+      {mapCount}
+    </ul>
+  );
 };
 
 const mapStateToProps = (state: any) => {
@@ -33,6 +36,4 @@ const mapDispatchToProps = {
   setCountItem,
 };
 
-export default compose(connect(mapStateToProps, mapDispatchToProps))(
-  CountPhones
-);
+export default compose(connect(mapStateToProps, mapDispatchToProps))(CountPhones);

@@ -5,3 +5,9 @@
   justify-self: start;
   padding-left: 20px;
 }
+
+@media screen and (max-width: 640px) {
+  .specific__content-image {
+    padding: 0 5px;
+  }
+}

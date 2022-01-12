@@ -3,5 +3,13 @@
   display: flex;
   margin: 0;
   justify-content: space-around;
-  width: 80%;
+  width: 100%;
+  padding: 0;
+}
+
+@media screen and (max-width: 640px) {
+  .devices__phone-list {
+    width: 100%;
+    padding: 0;
+  }
 }

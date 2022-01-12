@@ -12,6 +12,7 @@ const initialState = {
   onOpenId: 0,
   positionModal: 0,
   filterText: "",
+  onChecked: false,
 };
 
 function mappingPhones(state: any, currentCount: number) {
@@ -41,6 +42,9 @@ const reducer = (state = initialState, action: any) => {
 
     case "SET_POSITION_MODAL":
       return { ...state, positionModal: action.position };
+
+    case "ON_CHECKED":
+      return { ...state, onChecked: !state.onChecked };
 
     case "ON_FILTER":
       const filterText = action.filterText.toLowerCase();

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 const nameSpecific = [
   { name: "Производитель", key: "brand" },
-  { name: "Год", key: "year" },
+  { name: "Год релиза", key: "year" },
   { name: "Диагональ экрана (дюйм)", key: "diagonal" },
   { name: "Страна-производитель", key: "made" },
   { name: "Объём памяти", key: "memory" },
@@ -14,21 +14,33 @@ const nameSpecific = [
   { name: "Цена", key: "price" },
 ];
 
-const Specific = ({ phoneShow }: any) => {
+const Specific = ({ phoneShow, onChecked }: any) => {
   //
 
   const mapSpecific = nameSpecific.map((e: any, index: any) => {
-    const mapContent = phoneShow.map((item: any) => {
-      let tag = <p className="specific__content">{item[e.key]}</p>;
+    if (onChecked) {
+      const element = phoneShow[0][e.key];
+      const filter = phoneShow.every((c: any) => c[e.key] == element);
+      if (filter) {
+        return null;
+      }
+    }
+    const mapContent = phoneShow.map((item: any, i: number) => {
+      let tag = (
+        <p key={i.toString()} className="specific__content">
+          {item[e.key]}
+        </p>
+      );
       if (typeof item[e.key] == "boolean") {
         const src = require(`../../images/icon-${item[e.key]}.png`);
-        tag = <img src={src} className="specific__content-image" />;
+        tag = <img key={i.toString()} src={src} className="specific__content-image" />;
       }
       return tag;
     });
+
     return (
-      <li key={index + 1} className="specific__row">
-        <p className="specific__title">{e.name}:</p> {mapContent}
+      <li key={index.toString()} className="specific__row">
+        <p className="specific__title">{e.name}</p> {mapContent}
       </li>
     );
   });
@@ -42,12 +54,9 @@ const Specific = ({ phoneShow }: any) => {
 
 const mapStateToProps = (state: any) => {
   return {
-    currentCount: state.currentCount,
     phoneShow: state.phoneShow,
-    maxDevices: state.maxDevices,
+    onChecked: state.onChecked,
   };
 };
 
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Specific);
+export default connect(mapStateToProps)(Specific);
