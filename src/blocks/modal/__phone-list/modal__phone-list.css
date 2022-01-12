@@ -1,5 +1,6 @@
 .modal__phone-list {
   list-style-type: none;
   margin: 0;
+  padding-top: 18px;
   padding-left: 18px;
 }

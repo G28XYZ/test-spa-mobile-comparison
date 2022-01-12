@@ -1,0 +1,5 @@
+.specific__row {
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-start;
+}

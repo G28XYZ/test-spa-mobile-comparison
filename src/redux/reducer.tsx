@@ -19,7 +19,10 @@ const reducer = (state = initialState, action: any) => {
   switch (action.type) {
     //
     case "ON_CHANGE_COUNT":
-      const allDevices = [...state.phoneShow, ...state.phoneHidden];
+      const allDevices = [
+        ...state.phoneShow,
+        ...dataDevices.filter((item) => !state.phoneShow.includes(item)),
+      ];
       mapShowPhones = allDevices.slice(0, action.currentCount);
       mapHiddenPhones = allDevices.slice(mapShowPhones.length);
       return {
@@ -34,6 +37,18 @@ const reducer = (state = initialState, action: any) => {
 
     case "SET_POSITION_MODAL":
       return { ...state, positionModal: action.position };
+
+    case "ON_FILTER":
+      const filterText = action.filterText.toLowerCase();
+      const phoneHidden = dataDevices.filter(
+        (item) => !state.phoneShow.includes(item)
+      );
+      const filterPhone = dataDevices.filter(
+        (item: any) =>
+          phoneHidden.includes(item) &&
+          item.name.toLowerCase().includes(filterText)
+      );
+      return { ...state, phoneHidden: filterPhone };
 
     case "SWITCH_PHONE":
       const findIndexInShow: number = state.phoneShow.findIndex(

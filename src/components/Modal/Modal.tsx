@@ -1,6 +1,11 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { openModal, switchPhone, setCountItem } from "../../redux/actions";
+import {
+  openModal,
+  switchPhone,
+  setCountItem,
+  onFilterPhone,
+} from "../../redux/actions";
 
 //
 class Modal extends React.Component<any> {
@@ -39,6 +44,7 @@ class Modal extends React.Component<any> {
       openModal,
       maxDevices,
       positionModal,
+      onFilterPhone,
     } = this.props;
     if (modal) {
       document.addEventListener("keydown", this._handleCloseByEsc);
@@ -57,7 +63,16 @@ class Modal extends React.Component<any> {
           modal && currentCount < maxDevices ? "modal modal_open" : "modal"
         }
       >
-        <input type="text" className="modal__search" placeholder="Поиск" />
+        <input
+          type="text"
+          className={
+            currentCount <= 3
+              ? "modal__search modal__search_active"
+              : "modal__search"
+          }
+          placeholder="Поиск"
+          onChange={(evt: any) => onFilterPhone(evt.target.value)}
+        />
         <ul className="modal__phone-list">
           {phoneHidden.map((phone: any, index: number) => (
             <li key={index + 1} className="modal__item">
@@ -97,6 +112,7 @@ const mapDispatchToProps = {
   openModal,
   switchPhone,
   setCountItem,
+  onFilterPhone,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);

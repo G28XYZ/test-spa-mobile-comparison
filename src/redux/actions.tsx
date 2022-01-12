@@ -18,4 +18,9 @@ const setPosition = (position: number) => ({
   position,
 });
 
-export { setCountItem, openModal, switchPhone, setPosition };
+const onFilterPhone = (text: string) => ({
+  type: "ON_FILTER",
+  filterText: text,
+});
+
+export { setCountItem, openModal, switchPhone, setPosition, onFilterPhone };
