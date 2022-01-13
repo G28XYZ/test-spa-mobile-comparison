@@ -4,7 +4,7 @@
   opacity: 0;
   transition: visibility 0.5s, opacity 0.5s linear;
   top: 350px;
-  right: 150px;
+  left: 0;
   width: 421px;
   max-height: 336px;
   background: #ffffff;
