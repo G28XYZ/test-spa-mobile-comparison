@@ -2,6 +2,7 @@ import * as React from "react";
 import ModalSearch from "./common/ModalSearch";
 import ModalPhoneList from "./common/ModalPhoneList";
 //
+
 class Modal extends React.Component<any> {
   //
   _handleCloseByEsc = (evt: any) => {
