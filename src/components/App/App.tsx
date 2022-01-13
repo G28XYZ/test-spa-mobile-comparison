@@ -1,7 +1,7 @@
 import * as React from "react";
 import Header from "../Header";
 import Devices from "../Devices";
-import Modal from "../Modal";
+import ModalContainer from "../Modal/ModalContainer";
 import Specific from "../Specific";
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
         <Devices />
         <Specific />
       </main>
-      <Modal />
+      <ModalContainer />
     </div>
   );
 };

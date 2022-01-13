@@ -1,3 +1,9 @@
 .header__right-block {
   display: flex;
 }
+
+@media screen and (max-width: 640px) {
+  .header__right-block {
+    padding-top: 10px;
+  }
+}

@@ -8,6 +8,10 @@ const openModal = (id: number) => ({
   id,
 });
 
+const closeModal = () => ({
+  type: "CLOSE_MODAL",
+});
+
 const switchPhone = (id: number) => ({
   type: "SWITCH_PHONE",
   id,
@@ -27,4 +31,12 @@ const onChecked = () => ({
   type: "ON_CHECKED",
 });
 
-export { setCountItem, openModal, switchPhone, setPosition, onFilterPhone, onChecked };
+export {
+  openModal,
+  closeModal,
+  setCountItem,
+  switchPhone,
+  setPosition,
+  onFilterPhone,
+  onChecked,
+};

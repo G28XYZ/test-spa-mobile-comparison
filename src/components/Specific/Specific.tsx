@@ -2,7 +2,12 @@ import * as React from "react";
 import { connect } from "react-redux";
 import MapSpecific from "./common/MapSpecific";
 
-const Specific = ({ phoneShow, onChecked }: any) => {
+interface props {
+  phoneShow: any;
+  onChecked: boolean;
+}
+
+const Specific = ({ phoneShow, onChecked }: props) => {
   //
   return (
     <section className="specific">

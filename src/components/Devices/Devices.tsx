@@ -1,6 +1,6 @@
 import * as React from "react";
 import CountPhones from "../CountPhones";
-import Phones from "../Phones";
+import PhonesContainer from "../Phones/PhonesContainer";
 
 const Devices = () => {
   return (
@@ -9,7 +9,7 @@ const Devices = () => {
         <h1 className="devices__title">Смартфоны</h1>
         <CountPhones />
       </div>
-      <Phones />
+      <PhonesContainer />
     </section>
   );
 };
