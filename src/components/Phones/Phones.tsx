@@ -1,6 +1,5 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { compose } from "redux";
 import { setCountItem, openModal, setPosition, onChecked } from "../../redux/actions";
 
 const phoneItem = (
@@ -94,4 +93,4 @@ const mapDispatchToProps = {
   onChecked,
 };
 
-export default compose(connect(mapStateToProps, mapDispatchToProps))(Phones);
+export default connect(mapStateToProps, mapDispatchToProps)(Phones);

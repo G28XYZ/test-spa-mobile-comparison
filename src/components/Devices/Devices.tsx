@@ -1,6 +1,6 @@
 import * as React from "react";
-import CountPhones from "../CountPhones/CountPhones";
-import Phones from "../Phones/Phones";
+import CountPhones from "../CountPhones";
+import Phones from "../Phones";
 
 const Devices = () => {
   return (

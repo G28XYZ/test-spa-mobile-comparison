@@ -1,8 +1,8 @@
 import * as React from "react";
-import Header from "../Header/Header";
-import Devices from "../Devices/Devices";
-import Modal from "../Modal/Modal";
-import Specific from "../Specific/Specific";
+import Header from "../Header";
+import Devices from "../Devices";
+import Modal from "../Modal";
+import Specific from "../Specific";
 
 const App = () => {
   return (

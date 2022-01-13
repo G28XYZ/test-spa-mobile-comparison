@@ -1,6 +1,5 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { compose } from "redux";
 import { setCountItem } from "../../redux/actions";
 
 const CountPhones = ({ currentCount, setCountItem, maxDevices }: any) => {
@@ -36,4 +35,4 @@ const mapDispatchToProps = {
   setCountItem,
 };
 
-export default compose(connect(mapStateToProps, mapDispatchToProps))(CountPhones);
+export default connect(mapStateToProps, mapDispatchToProps)(CountPhones);
