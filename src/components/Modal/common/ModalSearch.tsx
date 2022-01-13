@@ -8,7 +8,7 @@ const ModalSearch = ({
       type="text"
       value={filterText}
       className={
-        phoneHidden.length >= 3 || filterText
+        phoneHidden.length > 3 || filterText
           ? "modal__search modal__search_active"
           : "modal__search"
       }

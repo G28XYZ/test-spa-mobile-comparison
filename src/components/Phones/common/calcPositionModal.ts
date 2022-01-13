@@ -1,5 +1,5 @@
 const calcPositionModal = (evt: any) => {
-  const widthModal = 450;
+  const widthModal = 520;
   const innerWidth = evt.view.innerWidth;
   const pageX = evt.pageX;
   const correctOnPage = innerWidth > 1100 ? innerWidth / 2 - widthModal : 0;
