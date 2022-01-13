@@ -1,12 +1,13 @@
 {
   "name": "test-spa-mobile-comparison",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Сравнение смартфонов",
   "main": "./src/pages/index.tsx",
   "scripts": {
     "dev": "webpack serve",
     "build": "webpack --mode production",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
