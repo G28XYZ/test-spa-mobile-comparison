@@ -1,0 +1,38 @@
+@font-face{font-family:Roboto;font-weight:400;src:url(a8d6ac03c7b96b7acb62.ttf) format("TrueType")}@font-face{font-family:Roboto;font-weight:500;src:url(7429a63c09f79a1760b0.ttf) format("TrueType")}@font-face{font-family:Roboto;font-weight:700;src:url(75371f53f06181df75f1.ttf) format("TrueType")}@font-face{font-family:Roboto;font-weight:900;src:url(2a4285847db4a9acb97f.ttf) format("TrueType")}
+.page{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;text-rendering:optimizeLegibility;font-family:Roboto,Arial,Helvetica,sans-serif;font-weight:500;margin:0 auto;max-width:1110px;position:relative}
+.header{display:flex;font-weight:bolder;justify-content:space-between;padding:44px 0;position:relative}.header:before{background-color:#a6a5a9;bottom:0;content:"";height:1px;left:0;position:absolute;right:calc(2% - 100vw);transform:translate(-50%)}@media screen and (max-width:640px){.header{flex-direction:column}.header:before{left:0;right:0;transform:translate(0)}}
+.header__account{padding-right:19px}
+.header__catalog{color:#0d5adc;font-size:18px;line-height:1.16667}
+.header__comparison{padding-right:48px;text-transform:uppercase}
+.header__image{height:20px;width:20px}
+.header__right-block{display:flex}@media screen and (max-width:640px){.header__right-block{padding-top:10px}}
+.devices{display:flex;flex-direction:column;padding-top:60px}
+.devices__count-list{align-self:flex-end;color:#0d5adc;display:flex;font-size:18px;font-weight:400;line-height:1.33333;list-style-type:none;margin:0;padding:0}.devices__count-list>span{padding-right:8px}@media screen and (max-width:640px){.devices__count-list{align-self:center;padding:20px 0}}
+.devices__count{cursor:pointer;height:-webkit-max-content;height:-moz-max-content;height:max-content;padding:0 3px;width:-webkit-max-content;width:-moz-max-content;width:max-content}.devices__count_active{border-bottom:1px solid}
+.devices__header{display:flex;justify-content:space-between}@media screen and (max-width:640px){.devices__header{align-items:center;flex-direction:column}}
+.devices__items{display:flex;justify-content:space-between;padding:40px 0 78px}@media screen and (max-width:768px){.devices__items{flex-direction:column;justify-content:center}}
+.devices__different{align-self:flex-end;color:#0d5adc;display:flex;justify-content:center}.devices__different>span{font-weight:400;padding-top:5px;width:-webkit-max-content;width:-moz-max-content;width:max-content}@media screen and (max-width:768px){.devices__different{align-self:center;padding-bottom:20px;width:100%}}
+.devices__checkbox{height:25px;margin-right:14px;padding:0;width:24px}
+.device__phone-block{display:flex;justify-items:center}@media screen and (max-width:640px){.device__phone-block{flex-direction:column}}
+.devices__phone-button{align-self:flex-end;background-color:transparent;background-image:url(19dba3b26cf5236a8fd3.svg);background-repeat:no-repeat;background-size:100%;border:none;cursor:pointer;height:8px;margin-left:25px;padding-bottom:30px;width:18px}.devices__phone-button:hover{transform:scale(1.1);transition:transform .5s}@media screen and (max-width:640px){.devices__phone-button{align-self:center;margin:10px 0;padding:0}}
+.devices__phone-image{height:120px}@media screen and (max-width:640px){.devices__phone-image{height:80px}}
+.devices__phone-list{display:flex;justify-content:space-around;list-style-type:none;margin:0;padding:0;width:100%}@media screen and (max-width:640px){.devices__phone-list{padding:0;width:100%}}
+.devices__phone{align-items:center;display:flex;flex-direction:column;text-align:center}
+.devices__phone-title{font-size:16px;line-height:1.1875;margin:0;padding-top:8px;width:100%}@media screen and (max-width:640px){.devices__phone-title{font-size:12px}}
+.devices__title{color:#828286;font-size:48px;font-weight:700;margin:0}
+.modal{background:#fff;border:1px solid #e3e3e3;border-radius:4px;box-shadow:0 16px 32px rgba(35,39,51,.1);box-sizing:border-box;max-height:336px;opacity:0;overflow-x:hidden;overflow-y:auto;position:absolute;right:150px;top:350px;transition:visibility .5s,opacity .5s linear;visibility:hidden;width:421px}@media screen and (max-width:640px){.modal{width:320px}}
+.modal_open{display:flex;flex-direction:column;opacity:1;transition:opacity .5s linear;visibility:visible}
+.modal__search{border:1px solid #c1c1c1;border-radius:4px;display:none;font-size:24px;margin-left:18px;margin-top:34px;min-height:47px;padding-left:16px;width:80%}
+.modal__search_active{display:block}
+.modal__item-image{height:50px}
+.modal__phone-list{list-style-type:none;margin:0;padding-left:18px;padding-top:18px}
+.modal__item{display:flex;gap:18px;padding-bottom:25px}
+.modal__item-switch{align-self:center;background:none;background-image:url(2d186b1e90147a696301.svg);background-repeat:no-repeat;background-size:contain;border:none;cursor:pointer;height:20px;width:20px}.modal__item-switch:hover{transform:scale(1.1);transition:transform .5s}
+
+.specific{display:flex;flex-direction:column;position:relative}.specific:before{background-color:#f1f7fc;content:"";height:100%;left:0;position:absolute;right:calc(2% - 100vw);transform:translate(-50%)}@media screen and (max-width:768px){.specific:before{left:0;right:0;transform:translate(0)}}
+.specific__row{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));justify-content:space-between;padding:45px 0;position:relative}.specific__row:before{background-color:#cdcfd2;content:"";height:1px;position:absolute;width:100%}@media screen and (max-width:768px){.specific__row{display:flex;flex-wrap:wrap;padding:30px 0;text-align:center}.specific__row:before{top:0}}
+.specific__list{align-content:flex-end;display:flex;flex-direction:column;margin:0;padding:0}
+.specific__content{align-self:center;justify-self:start;margin:0;padding-left:20px}@media screen and (max-width:768px){.specific__content{font-size:14px;padding:0 5px}}
+.specific__content-image{align-self:center;height:22px;justify-self:start;padding-left:20px;width:22px}@media screen and (max-width:640px){.specific__content-image{padding:0 5px}}
+.specific__title{color:#a4a9b9;grid-column:span 1;margin:0;text-transform:uppercase;width:100%}@media screen and (max-width:768px){.specific__title{padding-bottom:15px}}
+
