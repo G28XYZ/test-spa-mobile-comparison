@@ -13,8 +13,11 @@
 В разработке проекта использовались следующие веб-технологии:
 
 <ul>
-  <li>Flexbox</li>
+  <li>CSS
+    <li>Flexbox</li>
   <li>Grid</li>
+  </li>
+
   <li>Адаптивная вёрстка</li>
   <li>БЭМ</li>
   <li>Javascript</li>
